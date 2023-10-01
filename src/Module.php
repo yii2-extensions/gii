@@ -186,9 +186,13 @@ class Module extends \yii\base\Module implements BootstrapInterface
     {
         $packageInfo = Json::decode(file_get_contents(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'composer.json'));
         $extensionName = $packageInfo['name'];
+
         if (isset(Yii::$app->extensions[$extensionName])) {
+            var_dump(Yii::$app->extensions[$extensionName]);
+            die();
             return Yii::$app->extensions[$extensionName]['version'];
         }
+
         return parent::defaultVersion();
     }
 }
