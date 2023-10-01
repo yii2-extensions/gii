@@ -65,7 +65,7 @@ jobs:
           PGPORT: ${{ job.services.postgres.ports['5432'] }}
         run: |
           sudo apt update && sudo apt --fix-broken install && sudo apt install -y postgresql-client
-          psql -U postgres yiitest < tests/data/pgsql.sql
+          psql -U root yiitest < tests/data/pgsql.sql
           echo "<?php unset(\$config['databases']['pgsql']['fixture']);" > tests/data/config.local.php
 
       - name: Run tests with phpunit.
