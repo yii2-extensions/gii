@@ -6,7 +6,8 @@
     <br>
 </p>
 
-![Static Badge](https://img.shields.io/badge/php-%3E%3D8.1-787CB5)
+![php-version](https://img.shields.io/badge/php-%3E%3D8.1-787CB5)
+![yii2-version](https://img.shields.io/badge/yii2%20version-2.2-blue)
 [![build](https://github.com/yii2-extensions/gii/actions/workflows/build.yml/badge.svg)](https://github.com/yii2-extensions/gii/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/yii2-extensions/gii/branch/main/graph/badge.svg?token=MF0XUGVLYC)](https://codecov.io/gh/yii2-extensions/gii)
 [![static analysis](https://github.com/yii2-extensions/gii/actions/workflows/static.yml/badge.svg)](https://github.com/yii2-extensions/gii/actions/workflows/static.yml)
