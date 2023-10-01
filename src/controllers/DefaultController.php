@@ -135,6 +135,7 @@ class DefaultController extends Controller
 
             return $this->generator;
         }
+
         throw new NotFoundHttpException("Code generator not found: $id");
     }
 }
