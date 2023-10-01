@@ -6,6 +6,11 @@
     <br>
 </p>
 
+[![build](https://github.com/yii2-extensions/template/actions/workflows/build.yml/badge.svg)](https://github.com/yii2-extensions/template/actions/workflows/build.yml)
+[![codecov](https://codecov.io/gh/yii2-extensions/template/branch/main/graph/badge.svg?token=MF0XUGVLYC)](https://codecov.io/gh/yii2-extensions/template)
+[![static analysis](https://github.com/yii2-extensions/template/actions/workflows/static.yml/badge.svg)](https://github.com/yii2-extensions/template/actions/workflows/static.yml)
+[![StyleCI](https://github.styleci.io/repos/698621511/shield?branch=main)](https://github.styleci.io/repos/698621511?branch=main)
+
 ## Requirements
 
 The minimun version of `PHP` required by this package is `PHP 8.1`.
@@ -77,13 +82,6 @@ yii gii/model --tableName=city --modelClass=City
 ## Testing
 
 [Check the documentation testing](/docs/testing.md) to learn about testing.
-
-## CI status
-
-[![build](https://github.com/yii2-extensions/template/actions/workflows/build.yml/badge.svg)](https://github.com/yii2-extensions/template/actions/workflows/build.yml)
-[![codecov](https://codecov.io/gh/yii2-extensions/template/branch/main/graph/badge.svg?token=MF0XUGVLYC)](https://codecov.io/gh/yii2-extensions/template)
-[![static analysis](https://github.com/yii2-extensions/template/actions/workflows/static.yml/badge.svg)](https://github.com/yii2-extensions/template/actions/workflows/static.yml)
-[![StyleCI](https://github.styleci.io/repos/698621511/shield?branch=main)](https://github.styleci.io/repos/698621511?branch=main)
 
 ## Our social networks
 
