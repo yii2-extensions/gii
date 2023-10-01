@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 namespace yii\gii\controllers;
 
@@ -21,7 +21,6 @@ class DefaultController extends Controller
      */
     public $generator;
 
-
     /**
      * {@inheritdoc}
      */
@@ -30,7 +29,6 @@ class DefaultController extends Controller
         Yii::$app->response->format = Response::FORMAT_HTML;
         return parent::beforeAction($action);
     }
-
 
     public function actionIndex(): string
     {
@@ -101,10 +99,13 @@ class DefaultController extends Controller
      * Runs an action defined in the generator.
      * Given an action named "xyz", the method "actionXyz()" in the generator will be called.
      * If the method does not exist, a 400 HTTP exception will be thrown.
+     *
      * @param string $id the ID of the generator
      * @param string $name the action name
-     * @return mixed the result of the action.
+     *
      * @throws NotFoundHttpException if the action method does not exist.
+     *
+     * @return mixed the result of the action.
      */
     public function actionAction($id, $name)
     {
@@ -118,9 +119,12 @@ class DefaultController extends Controller
 
     /**
      * Loads the generator with the specified ID.
+     *
      * @param string $id the ID of the generator to be loaded.
-     * @return \yii\gii\Generator the loaded generator
+     *
      * @throws NotFoundHttpException
+     *
+     * @return \yii\gii\Generator the loaded generator
      */
     protected function loadGenerator($id)
     {

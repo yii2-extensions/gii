@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace yiiunit\gii\providers;
 
 use yii\gii\generators\model\Generator;
@@ -15,52 +17,52 @@ class Data
             [
                 [],
                 '10.20.30.40',
-                false
+                false,
             ],
             [
                 ['10.20.30.40'],
                 '10.20.30.40',
-                true
+                true,
             ],
             [
                 ['*'],
                 '10.20.30.40',
-                true
+                true,
             ],
             [
                 ['10.20.30.*'],
                 '10.20.30.40',
-                true
+                true,
             ],
             [
                 ['10.20.30.*'],
                 '10.20.40.40',
-                false
+                false,
             ],
             [
                 ['172.16.0.0/12'],
                 '172.15.1.2', // "below" CIDR range
-                false
+                false,
             ],
             [
                 ['172.16.0.0/12'],
                 '172.16.0.0', // in CIDR range
-                true
+                true,
             ],
             [
                 ['172.16.0.0/12'],
                 '172.22.33.44', // in CIDR range
-                true
+                true,
             ],
             [
                 ['172.16.0.0/12'],
                 '172.31.255.255', // in CIDR range
-                true
+                true,
             ],
             [
                 ['172.16.0.0/12'],
                 '172.32.1.2',  // "above" CIDR range
-                false
+                false,
             ],
         ];
     }
@@ -202,7 +204,7 @@ class Data
             ['product', 'Product.php', false, [
                 "[['supplier_id'], 'exist', 'skipOnError' => true, 'targetClass' => Supplier::className(), 'targetAttribute' => ['supplier_id' => 'id']],",
                 "[['category_id', 'category_language_code'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id', 'category_language_code' => 'language_code']],",
-                "[['category_id', 'category_language_code'], 'unique', 'targetAttribute' => ['category_id', 'category_language_code']],"
+                "[['category_id', 'category_language_code'], 'unique', 'targetAttribute' => ['category_id', 'category_language_code']],",
             ]],
             ['product_language', 'ProductLanguage.php', false, [
                 "[['supplier_id', 'id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['supplier_id' => 'supplier_id', 'id' => 'id']],",
@@ -241,8 +243,7 @@ class Data
                         'columnName' => 'display_number',
                         'propertyRow' => '* @property int $display_number',
                     ],
-
-                ]
+                ],
             ],
             [
                 'tableName' => 'product',
@@ -267,8 +268,7 @@ class Data
                         'columnName' => 'internal_name',
                         'propertyRow' => '* @property string|null $internal_name',
                     ],
-
-                ]
+                ],
             ],
         ];
     }

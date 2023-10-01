@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace yiiunit\gii;
 
 use Yii;
@@ -7,6 +9,7 @@ use yii\helpers\FileHelper;
 
 /**
  * GiiTestCase is the base class for all gii related test cases
+ *
  * @group gii
  */
 class GiiTestCase extends TestCase

@@ -1,6 +1,9 @@
 <?php
+
+declare(strict_types=1);
 /**
  * @link https://www.yiiframework.com/
+ *
  * @copyright Copyright (c) 2008 Yii Software LLC
  * @license https://www.yiiframework.com/license/
  */
@@ -8,7 +11,6 @@
 namespace yii\gii\generators\crud;
 
 use Yii;
-use yii\db\ActiveRecord;
 use yii\db\BaseActiveRecord;
 use yii\db\Schema;
 use yii\gii\CodeFile;
@@ -19,14 +21,15 @@ use yii\web\Controller;
 /**
  * Generates CRUD controller and views.
  *
- * @property-read string[] $columnNames Model column/attribute names.
- * @property-read string $controllerID The controller ID (without the module ID prefix).
- * @property-read string $nameAttribute
- * @property-read string[] $searchAttributes Searchable attributes.
- * @property-read \yii\db\TableSchema|false $tableSchema
- * @property-read string $viewPath The controller view path.
+ * @property string[] $columnNames Model column/attribute names.
+ * @property string $controllerID The controller ID (without the module ID prefix).
+ * @property string $nameAttribute
+ * @property string[] $searchAttributes Searchable attributes.
+ * @property false|\yii\db\TableSchema $tableSchema
+ * @property string $viewPath The controller view path.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ *
  * @since 2.0
  */
 class Generator extends \yii\gii\Generator
@@ -57,15 +60,16 @@ class Generator extends \yii\gii\Generator
     public $searchModelClass = '';
     /**
      * @var bool whether to wrap the `GridView` or `ListView` widget with the `yii\widgets\Pjax` widget
+     *
      * @since 2.0.5
      */
     public $enablePjax = false;
     /**
      * @var bool whether to use strict inflection for controller IDs (insert a separator between two consecutive uppercase chars)
+     *
      * @since 2.1.0
      */
     public $strictInflector = true;
-
 
     /**
      * {@inheritdoc}
@@ -249,7 +253,9 @@ class Generator extends \yii\gii\Generator
 
     /**
      * Generates code for active field
+     *
      * @param string $attribute
+     *
      * @return string
      */
     public function generateActiveField($attribute)
@@ -283,7 +289,7 @@ class Generator extends \yii\gii\Generator
                 $dropDownOptions[$enumValue] = Inflector::humanize($enumValue);
             }
             return "\$form->field(\$model, '$attribute')->dropDownList("
-                . preg_replace("/\n\s*/", ' ', VarDumper::export($dropDownOptions)).", ['prompt' => ''])";
+                . preg_replace("/\n\s*/", ' ', VarDumper::export($dropDownOptions)) . ", ['prompt' => ''])";
         }
 
         if ($column->phpType !== 'string' || $column->size === null) {
@@ -295,7 +301,9 @@ class Generator extends \yii\gii\Generator
 
     /**
      * Generates code for active search field
+     *
      * @param string $attribute
+     *
      * @return string
      */
     public function generateActiveSearchField($attribute)
@@ -315,7 +323,9 @@ class Generator extends \yii\gii\Generator
 
     /**
      * Generates column format
+     *
      * @param \yii\db\ColumnSchema $column
+     *
      * @return string
      */
     public function generateColumnFormat($column)
@@ -345,6 +355,7 @@ class Generator extends \yii\gii\Generator
 
     /**
      * Generates validation rules for the search model.
+     *
      * @return array the generated validation rules
      */
     public function generateSearchRules()
@@ -398,6 +409,7 @@ class Generator extends \yii\gii\Generator
 
     /**
      * Generates the attribute labels for the search model.
+     *
      * @return string[] the generated attribute labels (name => label)
      */
     public function generateSearchLabels()
@@ -428,6 +440,7 @@ class Generator extends \yii\gii\Generator
 
     /**
      * Generates search conditions
+     *
      * @return array
      */
     public function generateSearchConditions()
@@ -467,7 +480,7 @@ class Generator extends \yii\gii\Generator
                     break;
                 default:
                     $likeKeyword = $this->getClassDbDriverName() === 'pgsql' ? 'ilike' : 'like';
-                    $likeConditions[] = "->andFilterWhere(['{$likeKeyword}', '{$column}', \$this->{$column}])";                    
+                    $likeConditions[] = "->andFilterWhere(['{$likeKeyword}', '{$column}', \$this->{$column}])";
                     break;
             }
         }
@@ -479,7 +492,7 @@ class Generator extends \yii\gii\Generator
                 . "\n" . str_repeat(' ', 8) . "]);\n";
         }
         if (!empty($likeConditions)) {
-            $conditions[] = "\$query" . implode("\n" . str_repeat(' ', 12), $likeConditions) . ";\n";
+            $conditions[] = '$query' . implode("\n" . str_repeat(' ', 12), $likeConditions) . ";\n";
         }
 
         return $conditions;
@@ -487,6 +500,7 @@ class Generator extends \yii\gii\Generator
 
     /**
      * Generates URL parameters
+     *
      * @return string
      */
     public function generateUrlParams()
@@ -551,7 +565,8 @@ class Generator extends \yii\gii\Generator
 
     /**
      * Returns table schema for current model class or false if it is not an active record
-     * @return \yii\db\TableSchema|false
+     *
+     * @return false|\yii\db\TableSchema
      */
     public function getTableSchema()
     {
@@ -583,6 +598,7 @@ class Generator extends \yii\gii\Generator
     /**
      * @return string|null driver name of modelClass db connection.
      * In case db is not instance of \yii\db\Connection null will be returned.
+     *
      * @since 2.0.6
      */
     protected function getClassDbDriverName()

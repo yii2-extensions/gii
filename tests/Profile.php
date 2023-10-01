@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace yiiunit\gii;
 
 use yii\db\ActiveRecord;
@@ -21,7 +23,7 @@ class Profile extends ActiveRecord
     {
         return [
             [['description'], 'required'],
-            [['description'], 'string', 'max' => 128]
+            [['description'], 'string', 'max' => 128],
         ];
     }
 
@@ -35,4 +37,4 @@ class Profile extends ActiveRecord
             'description' => 'Description',
         ];
     }
-} 
+}

@@ -1,6 +1,9 @@
 <?php
+
+declare(strict_types=1);
 /**
  * @link https://www.yiiframework.com/
+ *
  * @copyright Copyright (c) 2008 Yii Software LLC
  * @license https://www.yiiframework.com/license/
  */
@@ -13,26 +16,26 @@ use yii\gii\CodeFile;
 /**
  * This generator will generate the skeleton files needed by an extension.
  *
- * @property-read string $keywordsArrayJson A json encoded array with the given keywords.
- * @property-read bool $outputPath The directory that contains the module class.
+ * @property string $keywordsArrayJson A json encoded array with the given keywords.
+ * @property bool $outputPath The directory that contains the module class.
  *
  * @author Tobias Munk <schmunk@usrbin.de>
+ *
  * @since 2.0
  */
 class Generator extends \yii\gii\Generator
 {
     public $vendorName;
-    public $packageName = "yii2-";
+    public $packageName = 'yii2-';
     public $namespace;
-    public $type = "yii2-extension";
-    public $keywords = "yii2,extension";
+    public $type = 'yii2-extension';
+    public $keywords = 'yii2,extension';
     public $title;
     public $description;
-    public $outputPath = "@app/runtime/tmp-extensions";
+    public $outputPath = '@app/runtime/tmp-extensions';
     public $license;
     public $authorName;
     public $authorEmail;
-
 
     /**
      * {@inheritdoc}
@@ -70,9 +73,9 @@ class Generator extends \yii\gii\Generator
                         'description',
                         'authorName',
                         'authorEmail',
-                        'outputPath'
+                        'outputPath',
                     ],
-                    'required'
+                    'required',
                 ],
                 [['keywords'], 'safe'],
                 [['authorEmail'], 'email'],
@@ -80,13 +83,13 @@ class Generator extends \yii\gii\Generator
                     ['vendorName', 'packageName'],
                     'match',
                     'pattern' => '/^[a-z0-9\-\.]+$/',
-                    'message' => 'Only lowercase word characters, dashes and dots are allowed.'
+                    'message' => 'Only lowercase word characters, dashes and dots are allowed.',
                 ],
                 [
                     ['namespace'],
                     'match',
                     'pattern' => '/^[a-zA-Z0-9_\\\]+\\\$/',
-                    'message' => 'Only letters, numbers, underscores and backslashes are allowed. PSR-4 namespaces must end with a namespace separator.'
+                    'message' => 'Only letters, numbers, underscores and backslashes are allowed. PSR-4 namespaces must end with a namespace separator.',
                 ],
             ]
         );
@@ -98,9 +101,9 @@ class Generator extends \yii\gii\Generator
     public function attributeLabels()
     {
         return [
-            'vendorName'  => 'Vendor Name',
+            'vendorName' => 'Vendor Name',
             'packageName' => 'Package Name',
-            'license'     => 'License',
+            'license' => 'License',
         ];
     }
 
@@ -110,12 +113,12 @@ class Generator extends \yii\gii\Generator
     public function hints()
     {
         return [
-            'vendorName'  => 'This refers to the name of the publisher, your GitHub user name is usually a good choice, eg. <code>myself</code>.',
+            'vendorName' => 'This refers to the name of the publisher, your GitHub user name is usually a good choice, eg. <code>myself</code>.',
             'packageName' => 'This is the name of the extension on packagist, eg. <code>yii2-foobar</code>.',
-            'namespace'   => 'PSR-4, eg. <code>myself\foobar\</code> This will be added to your autoloading by composer. Do not use yii, yii2 or yiisoft in the namespace.',
-            'keywords'    => 'Comma separated keywords for this extension.',
-            'outputPath'  => 'The temporary location of the generated files.',
-            'title'       => 'A more descriptive name of your application for the README file.',
+            'namespace' => 'PSR-4, eg. <code>myself\foobar\</code> This will be added to your autoloading by composer. Do not use yii, yii2 or yiisoft in the namespace.',
+            'keywords' => 'Comma separated keywords for this extension.',
+            'outputPath' => 'The temporary location of the generated files.',
+            'title' => 'A more descriptive name of your application for the README file.',
             'description' => 'A sentence or subline describing the main purpose of the extension.',
         ];
     }
@@ -203,15 +206,15 @@ EOD;
         $modulePath = $this->getOutputPath();
         $files[] = new CodeFile(
             $modulePath . '/' . $this->packageName . '/composer.json',
-            $this->render("composer.json")
+            $this->render('composer.json')
         );
         $files[] = new CodeFile(
             $modulePath . '/' . $this->packageName . '/AutoloadExample.php',
-            $this->render("AutoloadExample.php")
+            $this->render('AutoloadExample.php')
         );
         $files[] = new CodeFile(
             $modulePath . '/' . $this->packageName . '/README.md',
-            $this->render("README.md")
+            $this->render('README.md')
         );
 
         return $files;
@@ -264,7 +267,7 @@ EOD;
             'LGPL-2.1+',
             'LGPL-3.0',
             'LGPL-3.0+',
-            'MIT'
+            'MIT',
         ];
 
         return array_combine($licenses, $licenses);

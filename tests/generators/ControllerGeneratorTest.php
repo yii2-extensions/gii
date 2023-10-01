@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace yiiunit\gii\generators;
 
 use Yii;
@@ -8,6 +11,7 @@ use yiiunit\gii\GiiTestCase;
 
 /**
  * ControllerGeneratorTest checks that Gii controller generator produces valid results
+ *
  * @group gii
  */
 class ControllerGeneratorTest extends GiiTestCase

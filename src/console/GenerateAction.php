@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 namespace yii\gii\console;
 
@@ -16,7 +16,6 @@ class GenerateAction extends \yii\base\Action
      * @var GenerateController
      */
     public $controller;
-
 
     /**
      * {@inheritdoc}
@@ -46,9 +45,7 @@ class GenerateAction extends \yii\base\Action
         echo "\n";
     }
 
-    /**
-     * @return void
-     */
+
     protected function generateCode()
     {
         $files = $this->generator->generate();
@@ -75,7 +72,7 @@ class GenerateAction extends \yii\base\Action
                         $answers[$file->id] = !$skipAll;
                     } else {
                         do {
-                            $answer = $this->controller->select("Do you want to overwrite this file?", [
+                            $answer = $this->controller->select('Do you want to overwrite this file?', [
                                 'y' => 'Overwrite this file.',
                                 'n' => 'Skip this file.',
                                 'ya' => 'Overwrite this and the rest of the changed files.',
