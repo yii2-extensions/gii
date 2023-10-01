@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 namespace yii\gii\console;
 
@@ -42,7 +42,6 @@ class GenerateController extends Controller
      */
     private array $_options = [];
 
-
     /**
      * {@inheritdoc}
      */
@@ -61,8 +60,6 @@ class GenerateController extends Controller
 
     /**
      * {@inheritdoc}
-     *
-     * @return void
      */
     public function init()
     {

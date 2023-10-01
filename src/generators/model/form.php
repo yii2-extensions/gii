@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use yii\gii\generators\model\Generator;
 use yii\helpers\Url;
 
@@ -14,8 +16,8 @@ echo $form->field($generator, 'tableName')->textInput([
     'autocomplete' => 'off',
     'data' => [
         'table-prefix' => $generator->getTablePrefix(),
-        'action' => Url::to(['default/action', 'id' => 'model', 'name' => 'GenerateClassName'])
-    ]
+        'action' => Url::to(['default/action', 'id' => 'model', 'name' => 'GenerateClassName']),
+    ],
 ]);
 echo $form->field($generator, 'standardizeCapitals')->checkbox();
 echo $form->field($generator, 'singularize')->checkbox();

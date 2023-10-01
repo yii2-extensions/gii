@@ -1,6 +1,9 @@
 <?php
+
+declare(strict_types=1);
 /**
  * @link https://www.yiiframework.com/
+ *
  * @copyright Copyright (c) 2008 Yii Software LLC
  * @license https://www.yiiframework.com/license/
  */
@@ -16,9 +19,12 @@ use yii\helpers\StringHelper;
  * This generator will generate the skeleton code needed by a module.
  *
  * @inheritdoc
- * @property-read string $controllerNamespace The controller namespace of the module.
- * @property-read string $modulePath The directory that contains the module class.
+ *
+ * @property string $controllerNamespace The controller namespace of the module.
+ * @property string $modulePath The directory that contains the module class.
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ *
  * @since 2.0
  */
 class Generator extends \yii\gii\Generator
@@ -31,7 +37,6 @@ class Generator extends \yii\gii\Generator
      * @var string
      */
     public $moduleID;
-
 
     /**
      * {@inheritdoc}
@@ -137,15 +142,15 @@ EOD;
         $modulePath = $this->getModulePath();
         $files[] = new CodeFile(
             $modulePath . '/' . StringHelper::basename($this->moduleClass) . '.php',
-            $this->render("module.php")
+            $this->render('module.php')
         );
         $files[] = new CodeFile(
             $modulePath . '/controllers/DefaultController.php',
-            $this->render("controller.php")
+            $this->render('controller.php')
         );
         $files[] = new CodeFile(
             $modulePath . '/views/default/index.php',
-            $this->render("view.php")
+            $this->render('view.php')
         );
 
         return $files;

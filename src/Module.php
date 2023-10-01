@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 namespace yii\gii;
 
@@ -76,11 +76,8 @@ class Module extends \yii\base\Module implements BootstrapInterface
      */
     public $newDirMode = 0777;
 
-
     /**
      * {@inheritdoc}
-     *
-     * @return void
      */
     public function bootstrap($app)
     {
@@ -163,6 +160,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
 
     /**
      * Returns the list of the core code generator configurations.
+     *
      * @return array the list of the core code generator configurations.
      */
     protected function coreGenerators()
@@ -179,6 +177,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
 
     /**
      * {@inheritdoc}
+     *
      * @since 2.0.6
      */
     protected function defaultVersion()

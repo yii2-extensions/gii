@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace yiiunit\gii;
 
 use yii\di\Container;
@@ -24,6 +26,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * Populates Yii::$app with a new application
      * The application will be destroyed on tearDown() automatically.
+     *
      * @param array $config The application configuration, if needed
      * @param string $appClass name of the application class to create
      */
@@ -63,11 +66,14 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
     /**
      * Invokes object method, even if it is private or protected.
+     *
      * @param object $object object.
      * @param string $method method name.
      * @param array $args method arguments
-     * @return mixed method result
+     *
      * @throws \ReflectionException
+     *
+     * @return mixed method result
      */
     protected function invoke($object, $method, array $args = [])
     {

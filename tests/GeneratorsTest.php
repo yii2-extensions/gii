@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace yiiunit\gii;
 
-use yii\gii\CodeFile;
 use yii\gii\generators\controller\Generator as ControllerGenerator;
 use yii\gii\generators\crud\Generator as CRUDGenerator;
 use yii\gii\generators\extension\Generator as ExtensionGenerator;
@@ -12,6 +13,7 @@ use yii\gii\generators\module\Generator as ModuleGenerator;
 
 /**
  * GeneratorsTest checks that Gii generators aren't throwing any errors during generation
+ *
  * @group gii
  */
 class GeneratorsTest extends GiiTestCase
@@ -59,8 +61,8 @@ class GeneratorsTest extends GiiTestCase
         $files = $generator->generate();
         $modelCode = $files[0]->content;
 
-        $this->assertTrue(str_contains($modelCode, "'id' => 'ID'"), "ID label should be there:\n" . $modelCode);
-        $this->assertTrue(str_contains($modelCode, "'description' => 'Description',"), "Description label should be there:\n" . $modelCode);
+        $this->assertStringContainsString("'id' => 'ID'", $modelCode, "ID label should be there:\n" . $modelCode);
+        $this->assertStringContainsString("'description' => 'Description',", $modelCode, "Description label should be there:\n" . $modelCode);
     }
 
     public function testModuleGenerator()
@@ -75,7 +77,6 @@ class GeneratorsTest extends GiiTestCase
 
         $this->assertNotEmpty($generator->generate());
     }
-
 
     public function testFormGenerator()
     {
@@ -115,7 +116,7 @@ class GeneratorsTest extends GiiTestCase
         // Validate custom template
         \Yii::setAlias('@customTemplate', __DIR__ . '/data/templates');
         $generator->templates = [
-            'custom' => '@customTemplate/custom'
+            'custom' => '@customTemplate/custom',
         ];
         $generator->template = 'custom';
 

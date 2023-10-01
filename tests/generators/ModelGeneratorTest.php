@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace yiiunit\gii\generators;
 
 use yii\gii\generators\model\Generator as ModelGenerator;
@@ -6,6 +9,7 @@ use yiiunit\gii\GiiTestCase;
 
 /**
  * ModelGeneratorTest checks that Gii model generator produces valid results
+ *
  * @group gii
  */
 class ModelGeneratorTest extends GiiTestCase
@@ -47,7 +51,7 @@ class ModelGeneratorTest extends GiiTestCase
         $this->assertTrue($valid, 'Validation failed: ' . print_r($generator->getErrors(), true));
 
         $files = $generator->generate();
-        $this->assertEquals(12, count($files));
+        $this->assertCount(12, $files);
         $expectedNames = [
             'Attribute.php',
             'BlogRtl.php',
@@ -84,7 +88,7 @@ class ModelGeneratorTest extends GiiTestCase
         $generator->tableName = $tableName;
 
         $files = $generator->generate();
-        $this->assertEquals(1, count($files));
+        $this->assertCount(1, $files);
         $this->assertEquals($fileName, basename($files[0]->path));
 
         $code = $files[0]->content;
@@ -93,14 +97,14 @@ class ModelGeneratorTest extends GiiTestCase
             $this->assertTrue(
                 $relation['expected'] === $found,
                 "Relation \"{$relation['relation']}\" should"
-                . ($relation['expected'] ? '' : ' not')." be there:\n" . $code
+                . ($relation['expected'] ? '' : ' not') . " be there:\n" . $code
             );
 
             $found = str_contains($code, (string) $relation['name']);
             $this->assertTrue(
                 $relation['expected'] === $found,
                 "Relation Name \"{$relation['name']}\" should"
-                . ($relation['expected'] ? '' : ' not')." be there:\n" . $code
+                . ($relation['expected'] ? '' : ' not') . " be there:\n" . $code
             );
         }
     }
@@ -121,13 +125,14 @@ class ModelGeneratorTest extends GiiTestCase
         $generator->useClassConstant = $useClassConstant;
 
         $files = $generator->generate();
-        $this->assertEquals(1, count($files));
+        $this->assertCount(1, $files);
         $this->assertEquals($fileName, basename($files[0]->path));
 
         $code = $files[0]->content;
         foreach ($rules as $rule) {
             $location = strpos($code, (string) $rule);
-            $this->assertTrue($location !== false,
+            $this->assertTrue(
+                $location !== false,
                 "Rule \"{$rule}\" should be there:\n" . $code
             );
         }
@@ -135,7 +140,7 @@ class ModelGeneratorTest extends GiiTestCase
 
     public function testGenerateStandardizedCapitalsForClassNames()
     {
-        $modelGenerator = new ModelGeneratorMock;
+        $modelGenerator = new ModelGeneratorMock();
         $modelGenerator->standardizeCapitals = true;
 
         $tableNames = [
@@ -159,7 +164,7 @@ class ModelGeneratorTest extends GiiTestCase
 
     public function testGenerateNotStandardizedCapitalsForClassNames()
     {
-        $modelGenerator = new ModelGeneratorMock;
+        $modelGenerator = new ModelGeneratorMock();
         $modelGenerator->standardizeCapitals = false;
 
         $tableNames = [
@@ -185,7 +190,7 @@ class ModelGeneratorTest extends GiiTestCase
 
     public function testGenerateSingularizedClassNames()
     {
-        $modelGenerator = new ModelGeneratorMock;
+        $modelGenerator = new ModelGeneratorMock();
         $modelGenerator->singularize = true;
 
         $tableNames = [
@@ -206,7 +211,7 @@ class ModelGeneratorTest extends GiiTestCase
 
     public function testGenerateNotSingularizedClassNames()
     {
-        $modelGenerator = new ModelGeneratorMock;
+        $modelGenerator = new ModelGeneratorMock();
 
         $tableNames = [
             'clients' => 'Clients',
@@ -243,6 +248,5 @@ class ModelGeneratorTest extends GiiTestCase
                 "Column \"{$column['columnName']}\" properties should be there:\n" . $column['propertyRow']
             );
         }
-
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace yiiunit\gii;
 
 use yii\gii\generators\model\Generator;
@@ -7,6 +9,7 @@ use Yii;
 
 /**
  * SchemaTest checks that Gii model generator supports multiple schemas
+ *
  * @group gii
  * @group pgsql
  */
@@ -27,9 +30,9 @@ class SchemaTest extends GiiTestCase
             $this->markTestSkipped('This feature is only available since Yii 2.0.4.');
         }
 
-        $this->assertEquals(5, count($files));
-        $this->assertEquals("Schema1Table1", basename($files[3]->path, '.php'));
-        $this->assertEquals("Schema1Table2", basename($files[4]->path, '.php'));
+        $this->assertCount(5, $files);
+        $this->assertEquals('Schema1Table1', basename($files[3]->path, '.php'));
+        $this->assertEquals('Schema1Table2', basename($files[4]->path, '.php'));
     }
 
     /**
@@ -88,7 +91,7 @@ class SchemaTest extends GiiTestCase
         $generator->generateJunctionRelationMode = $generateViaRelationMode;
 
         $files = $generator->generate();
-        $this->assertEquals($filesCount, count($files));
+        $this->assertCount($filesCount, $files);
 
         foreach ($relationSets as $index => $relations) {
             $modelCode = $files[$index]->content;
@@ -102,8 +105,10 @@ class SchemaTest extends GiiTestCase
                 if (is_array($relation)) {
                     $relation = $relation[$generateViaRelationMode];
                 }
-                $this->assertTrue(str_contains($modelCode, (string) $relation),
-                    "Model $modelClass should contain this relation: $relation.\n$modelCode");
+                $this->assertStringContainsString(
+                    (string) $relation, $modelCode,
+                    "Model $modelClass should contain this relation: $relation.\n$modelCode"
+                );
             }
         }
     }

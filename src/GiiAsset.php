@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 namespace yii\gii;
 
@@ -20,6 +20,6 @@ class GiiAsset extends AssetBundle
         'js/gii.js',
     ];
     public $depends = [
-        'yii\web\YiiAsset'
+        'yii\web\YiiAsset',
     ];
 }

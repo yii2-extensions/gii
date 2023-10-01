@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 namespace yii\gii;
 
@@ -12,8 +12,8 @@ use yii\helpers\Html;
 /**
  * CodeFile represents a code file to be generated.
  *
- * @property-read string $relativePath The code file path relative to the application base path.
- * @property-read string $type The code file extension (e.g. php, txt).
+ * @property string $relativePath The code file path relative to the application base path.
+ * @property string $type The code file extension (e.g. php, txt).
  */
 class CodeFile extends BaseObject
 {
@@ -43,9 +43,9 @@ class CodeFile extends BaseObject
      */
     public $operation;
 
-
     /**
      * Constructor.
+     *
      * @param string $path the file path that the new code should be saved to.
      * @param string $content the newly generated code content.
      * @param array $config name-value pairs that will be used to initialize the object properties
@@ -65,7 +65,8 @@ class CodeFile extends BaseObject
 
     /**
      * Saves the code into the file specified by [[path]].
-     * @return string|bool the error occurred while saving the code file, or true if no error.
+     *
+     * @return bool|string the error occurred while saving the code file, or true if no error.
      */
     public function save()
     {
@@ -137,7 +138,8 @@ class CodeFile extends BaseObject
 
         if ($type === 'php') {
             return highlight_string($this->content, true);
-        } elseif (!in_array($type, ['jpg', 'gif', 'png', 'exe'])) {
+        }
+        if (!in_array($type, ['jpg', 'gif', 'png', 'exe'])) {
             return nl2br(Html::encode($this->content));
         }
 
@@ -154,7 +156,8 @@ class CodeFile extends BaseObject
         $type = strtolower($this->getType());
         if (in_array($type, ['jpg', 'gif', 'png', 'exe'])) {
             return false;
-        } elseif ($this->operation === self::OP_OVERWRITE) {
+        }
+        if ($this->operation === self::OP_OVERWRITE) {
             return $this->renderDiff(file($this->path), $this->content);
         }
 
@@ -164,9 +167,9 @@ class CodeFile extends BaseObject
     /**
      * Renders diff between two sets of lines
      *
-     * @return string
-     *
      * @param false|string[] $lines1
+     *
+     * @return string
      *
      * @psalm-param false|list<string> $lines1
      */

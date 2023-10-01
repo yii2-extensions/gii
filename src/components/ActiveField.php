@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace yii\gii\components;
 
-use yii\gii\Generator;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
@@ -33,7 +32,7 @@ class ActiveField extends \yii\widgets\ActiveField
         $autoCompleteData = $this->model->autoCompleteData();
         if (isset($autoCompleteData[$this->attribute])) {
             if (is_callable($autoCompleteData[$this->attribute])) {
-                $this->autoComplete(call_user_func($autoCompleteData[$this->attribute]));
+                $this->autoComplete($autoCompleteData[$this->attribute]());
             } else {
                 $this->autoComplete($autoCompleteData[$this->attribute]);
             }

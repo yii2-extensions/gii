@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 namespace yii\gii\generators\controller;
 
@@ -13,11 +13,11 @@ use yii\helpers\StringHelper;
 /**
  * This generator will generate a controller and one or a few action view files.
  *
- * @property-read array $actionIDs An array of action IDs entered by the user.
- * @property-read string $controllerFile The controller class file path.
- * @property-read string $controllerID The controller ID.
- * @property-read string $controllerNamespace The namespace of the controller class.
- * @property-read string $controllerSubPath The controller sub path.
+ * @property array $actionIDs An array of action IDs entered by the user.
+ * @property string $controllerFile The controller class file path.
+ * @property string $controllerID The controller ID.
+ * @property string $controllerNamespace The namespace of the controller class.
+ * @property string $controllerSubPath The controller sub path.
  */
 class Generator extends \yii\gii\Generator
 {
@@ -37,7 +37,6 @@ class Generator extends \yii\gii\Generator
      * @var string list of action IDs separated by commas or spaces
      */
     public $actions = 'index';
-
 
     /**
      * {@inheritdoc}
@@ -137,8 +136,11 @@ class Generator extends \yii\gii\Generator
 
     /**
      * This method returns a link to try controller generated
+     *
      * @see https://github.com/yiisoft/yii2-gii/issues/182
+     *
      * @return string
+     *
      * @since 2.0.6
      */
     private function getLinkToTry()
@@ -180,6 +182,7 @@ class Generator extends \yii\gii\Generator
 
     /**
      * Normalizes [[actions]] into an array of action IDs.
+     *
      * @return array an array of action IDs entered by the user
      */
     public function getActionIDs()
@@ -210,8 +213,10 @@ class Generator extends \yii\gii\Generator
     /**
      * This method will return sub path for controller if it
      * is located in subdirectory of application controllers dir
+     *
      * @see https://github.com/yiisoft/yii2-gii/issues/182
      * @since 2.0.6
+     *
      * @return string the controller sub path
      */
     public function getControllerSubPath()
@@ -227,6 +232,7 @@ class Generator extends \yii\gii\Generator
 
     /**
      * @param string $action the action ID
+     *
      * @return string the action view file path
      */
     public function getViewFile($action)

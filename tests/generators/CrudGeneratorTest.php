@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace yiiunit\gii\generators;
 
 use yii\db\ColumnSchema;
@@ -66,5 +68,4 @@ class CrudGeneratorTest extends TestCase
         $g->controllerClass = '\app\controllers\XYTestController';
         $this->assertEquals('x-y-test', $g->getControllerID());
     }
-
 }
