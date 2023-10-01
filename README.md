@@ -1,14 +1,14 @@
 <p align="center">
-    <a href="https://github.com/yii2-extensions/template" target="_blank">
+    <a href="https://github.com/yii2-extensions/gii" target="_blank">
         <img src="https://www.yiiframework.com/image/yii_logo_light.svg" height="100px;">
     </a>
     <h1 align="center">Gii.</h1>
     <br>
 </p>
 
-[![build](https://github.com/yii2-extensions/template/actions/workflows/build.yml/badge.svg)](https://github.com/yii2-extensions/template/actions/workflows/build.yml)
-[![codecov](https://codecov.io/gh/yii2-extensions/template/branch/main/graph/badge.svg?token=MF0XUGVLYC)](https://codecov.io/gh/yii2-extensions/template)
-[![static analysis](https://github.com/yii2-extensions/template/actions/workflows/static.yml/badge.svg)](https://github.com/yii2-extensions/template/actions/workflows/static.yml)
+[![build](https://github.com/yii2-extensions/gii/actions/workflows/build.yml/badge.svg)](https://github.com/yii2-extensions/gii/actions/workflows/build.yml)
+[![codecov](https://codecov.io/gh/yii2-extensions/gii/branch/main/graph/badge.svg?token=MF0XUGVLYC)](https://codecov.io/gh/yii2-extensions/gii)
+[![static analysis](https://github.com/yii2-extensions/gii/actions/workflows/static.yml/badge.svg)](https://github.com/yii2-extensions/gii/actions/workflows/static.yml)
 [![StyleCI](https://github.styleci.io/repos/698621511/shield?branch=main)](https://github.styleci.io/repos/698621511?branch=main)
 
 ## Requirements
