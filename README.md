@@ -6,14 +6,11 @@
     <br>
 </p>
 
+[![PHP Version Require](http://poser.pugx.org/yii2-extensions/gii/require/php)](https://packagist.org/packages/yii2-extensions/gii)
 [![build](https://github.com/yii2-extensions/gii/actions/workflows/build.yml/badge.svg)](https://github.com/yii2-extensions/gii/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/yii2-extensions/gii/branch/main/graph/badge.svg?token=MF0XUGVLYC)](https://codecov.io/gh/yii2-extensions/gii)
 [![static analysis](https://github.com/yii2-extensions/gii/actions/workflows/static.yml/badge.svg)](https://github.com/yii2-extensions/gii/actions/workflows/static.yml)
 [![StyleCI](https://github.styleci.io/repos/698621511/shield?branch=main)](https://github.styleci.io/repos/698621511?branch=main)
-
-## Requirements
-
-The minimun version of `PHP` required by this package is `PHP 8.1`.
 
 ## Installation
 
