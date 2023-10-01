@@ -106,7 +106,8 @@ class SchemaTest extends GiiTestCase
                     $relation = $relation[$generateViaRelationMode];
                 }
                 $this->assertStringContainsString(
-                    (string) $relation, $modelCode,
+                    (string) $relation,
+                    $modelCode,
                     "Model $modelClass should contain this relation: $relation.\n$modelCode"
                 );
             }

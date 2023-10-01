@@ -81,7 +81,6 @@ class Generator extends \yii\gii\Generator
      */
     protected $classNames = [];
 
-
     public function init()
     {
         parent::init();

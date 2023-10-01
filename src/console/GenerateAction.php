@@ -45,7 +45,6 @@ class GenerateAction extends \yii\base\Action
         echo "\n";
     }
 
-
     protected function generateCode()
     {
         $files = $this->generator->generate();
