@@ -20,7 +20,7 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```
-php composer.phar require --dev --prefer-dist yiisoft/yii2-gii
+php composer.phar require --dev --prefer-dist yii2-extensions/gii
 ```
 
 or add
