@@ -1,9 +1,6 @@
 <?php
-/**
- * @link https://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license https://www.yiiframework.com/license/
- */
+
+declare (strict_types = 1);
 
 namespace yii\gii\generators\controller;
 
@@ -21,9 +18,6 @@ use yii\helpers\StringHelper;
  * @property-read string $controllerID The controller ID.
  * @property-read string $controllerNamespace The namespace of the controller class.
  * @property-read string $controllerSubPath The controller sub path.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
  */
 class Generator extends \yii\gii\Generator
 {

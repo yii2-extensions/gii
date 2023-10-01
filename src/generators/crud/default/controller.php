@@ -1,4 +1,7 @@
 <?php
+
+declare (strict_types = 1);
+
 /**
  * This is the template for generating a CRUD controller class file.
  */
@@ -7,8 +10,10 @@ use yii\db\ActiveRecordInterface;
 use yii\helpers\StringHelper;
 
 
-/** @var yii\web\View $this */
-/** @var yii\gii\generators\crud\Generator $generator */
+/**
+ * @var yii\gii\generators\crud\Generator $generator
+ * @var yii\web\View $this
+ */
 
 $controllerClass = StringHelper::basename($generator->controllerClass);
 $modelClass = StringHelper::basename($generator->modelClass);

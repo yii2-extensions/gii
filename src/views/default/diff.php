@@ -1,6 +1,11 @@
 <?php
-/** @var yii\web\View $this */
-/** @var mixed $diff */
+
+declare (strict_types = 1);
+
+/**
+ * @var mixed $diff
+ * @var yii\web\View $this
+ */
 ?>
 <div class="default-diff">
     <?php if ($diff === false): ?>

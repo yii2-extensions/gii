@@ -1,10 +1,14 @@
 <?php
 
+declare (strict_types = 1);
+
 use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 
-/** @var yii\web\View $this */
-/** @var yii\gii\generators\crud\Generator $generator */
+/**
+ * @var yii\gii\generators\crud\Generator $generator
+ * @var yii\web\View $this
+ */
 
 $urlParams = $generator->generateUrlParams();
 $modelClassName = Inflector::camel2words(StringHelper::basename($generator->modelClass));

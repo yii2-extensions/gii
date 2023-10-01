@@ -1,4 +1,7 @@
 <?php
+
+declare (strict_types = 1);
+
 /**
  * This is the template for generating a controller class file.
  */
@@ -6,8 +9,10 @@
 use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 
-/** @var yii\web\View $this */
-/** @var yii\gii\generators\controller\Generator $generator */
+/**
+ * @var yii\web\View $this
+ * @var yii\gii\generators\controller\Generator $generator
+ */
 
 echo "<?php\n";
 ?>

@@ -1,11 +1,16 @@
 <?php
+
+declare (strict_types = 1);
+
 /**
  * This is the template for generating an action view file.
  */
 
-/** @var yii\web\View $this */
-/** @var yii\gii\generators\controller\Generator $generator */
-/** @var string $action the action ID */
+/**
+ * @var string $action the action ID
+ * @var yii\gii\generators\controller\Generator $generator
+ * @var yii\web\View $this
+ */
 
 echo "<?php\n";
 ?>

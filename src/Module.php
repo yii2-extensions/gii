@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 namespace yii\gii;
 
 use Yii;
@@ -32,9 +34,6 @@ use yii\web\ForbiddenHttpException;
  *
  * If your application enables [[\yii\web\UrlManager::enablePrettyUrl|pretty URLs]],
  * you can then access Gii via URL: `http://localhost/path/to/index.php/gii`
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
  */
 class Module extends \yii\base\Module implements BootstrapInterface
 {

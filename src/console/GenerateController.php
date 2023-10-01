@@ -1,9 +1,6 @@
 <?php
-/**
- * @link https://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license https://www.yiiframework.com/license/
- */
+
+declare (strict_types = 1);
 
 namespace yii\gii\console;
 
@@ -22,10 +19,6 @@ use yii\gii\Generator;
  * ```
  * $ ./yii gii/model --tableName=city --modelClass=City
  * ```
- *
- * @author Tobias Munk <schmunk@usrbin.de>
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
  */
 class GenerateController extends Controller
 {

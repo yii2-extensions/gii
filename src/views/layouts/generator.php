@@ -1,13 +1,15 @@
 <?php
 
+declare (strict_types = 1);
+
 use Yii;
 use yii\helpers\Html;
 
 /**
  * @var string $content
- * @var \yii\gii\Generator $activeGenerator
- * @var \yii\gii\Generator[] $generators
- * @var \yii\web\View $this
+ * @var yii\gii\Generator $activeGenerator
+ * @var yii\gii\Generator[] $generators
+ * @var yii\web\View $this
  */
 
 $generators = Yii::$app->controller->module->generators;
