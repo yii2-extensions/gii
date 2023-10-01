@@ -188,11 +188,9 @@ class Module extends \yii\base\Module implements BootstrapInterface
         $extensionName = $packageInfo['name'];
 
         if (isset(Yii::$app->extensions[$extensionName])) {
-            var_dump(Yii::$app->extensions[$extensionName]);
-            die();
             return Yii::$app->extensions[$extensionName]['version'];
         }
 
-        return parent::defaultVersion();
+        return '2.2';
     }
 }
