@@ -1,5 +1,5 @@
 {
-    "name": "yii2/gii",
+    "name": "yii2-extensions/gii",
     "type": "yii2-extension",
     "description": "The Gii extension for the Yii framework",
     "keywords": [
