@@ -13,6 +13,7 @@ use yii\helpers\StringHelper;
 /* @var $model \yii\db\ActiveRecord */
 $model = new $generator->modelClass();
 $safeAttributes = $model->safeAttributes();
+
 if (empty($safeAttributes)) {
     $safeAttributes = $model->attributes();
 }
