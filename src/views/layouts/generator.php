@@ -3,17 +3,20 @@
 declare (strict_types = 1);
 
 use Yii;
+use yii\gii\controllers\DefaultController;
+use yii\gii\Generator;
 use yii\helpers\Html;
+use yii\web\View;
 
 /**
  * @var string $content
- * @var yii\gii\Generator $activeGenerator
- * @var yii\gii\Generator[] $generators
- * @var yii\web\View $this
+ * @var View $this
  */
 
-$generators = Yii::$app->controller->module->generators;
-$activeGenerator = Yii::$app->controller->generator;
+/** @phpstan-var DefaultController $controller */
+$controller = Yii::$app->controller;
+$generators = $controller->module->generators;
+$activeGenerator = $controller->generator;
 ?>
 <?php $this->beginContent('@yii/gii/views/layouts/main.php'); ?>
 <div class="row">

@@ -21,8 +21,6 @@ class GenerateAction extends \yii\base\Action
      * {@inheritdoc}
      *
      * @return int|null
-     *
-     * @psalm-return 64|null
      */
     public function run()
     {
@@ -30,6 +28,7 @@ class GenerateAction extends \yii\base\Action
 
         if ($this->generator->validate()) {
             $this->generateCode();
+            return null;
         } else {
             $this->displayValidationErrors();
             return \yii\console\ExitCode::USAGE;

@@ -533,7 +533,7 @@ class Generator extends \yii\gii\Generator
     /**
      * Generates relations using a junction table by adding an extra via() or viaTable() depending on $generateViaRelationMode.
      *
-     * @param \yii\db\TableSchema the table being checked
+     * @param \yii\db\TableSchema $table the table being checked
      * @param array $fks obtained from the checkJunctionTable() method
      * @param array $relations
      *
@@ -827,7 +827,7 @@ class Generator extends \yii\gii\Generator
     /**
      * Checks if the given table is a junction table, that is it has at least one pair of unique foreign keys.
      *
-     * @param \yii\db\TableSchema the table being checked
+     * @param \yii\db\TableSchema $table the table being checked
      *
      * @return array|bool all unique foreign key pairs if the table is a junction table,
      * or false if the table is not a junction table.

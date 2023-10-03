@@ -12,7 +12,7 @@ echo "<?php\n";
 ?>
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\gii\components\ActiveForm;
 
 /** @var yii\web\View $this */
 /** @var <?= ltrim((string) $generator->modelClass, '\\') ?> $model */

@@ -2,24 +2,25 @@
 
 declare (strict_types = 1);
 
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-use yii\gii\components\ActiveField;
 use yii\gii\CodeFile;
+use yii\gii\components\ActiveForm;
+use yii\gii\Generator;
+use yii\helpers\Html;
+use yii\web\View;
 
 /**
  * @var array|null $answers
  * @var bool $hasError
  * @var CodeFile[]|null $files
+ * @var Generator $generator
  * @var string $id panel ID
  * @var string|null $results
- * @var yii\gii\Generator $generator
- * @var yii\web\View $this
- * @var yii\widgets\ActiveForm $form
+ * @var View $this
  */
 
 $this->title = $generator->getName();
 $templates = [];
+
 foreach ($generator->templates as $name => $path) {
     $templates[$name] = "$name ($path)";
 }
@@ -35,7 +36,6 @@ foreach ($generator->templates as $name => $path) {
         'errorCssClass' => 'is-invalid',
         'validationStateOn' => ActiveForm::VALIDATION_STATE_ON_INPUT,
         'fieldConfig' => [
-            'class' => ActiveField::className(),
             'hintOptions' => ['tag' => 'small', 'class' => 'form-text text-muted'],
             'errorOptions' => ['class' => 'invalid-feedback']
         ],

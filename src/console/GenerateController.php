@@ -77,7 +77,7 @@ class GenerateController extends Controller
      */
     public function createAction($id)
     {
-        /** @var $action GenerateAction */
+        /** @var GenerateAction $action */
         $action = parent::createAction($id);
         foreach ($this->_options as $name => $value) {
             $action->generator->$name = $value;
@@ -142,7 +142,7 @@ class GenerateController extends Controller
             return parent::getActionHelpSummary($action);
         }
 
-        /** @var $action GenerateAction */
+        /** @var GenerateAction $action */
         return $action->generator->getName();
     }
 
@@ -155,7 +155,7 @@ class GenerateController extends Controller
             return parent::getActionHelp($action);
         }
 
-        /** @var $action GenerateAction */
+        /** @var GenerateAction $action */
         $description = $action->generator->getDescription();
 
         return wordwrap(preg_replace('/\s+/', ' ', (string) $description));
@@ -177,7 +177,7 @@ class GenerateController extends Controller
         if ($action instanceof InlineAction) {
             return parent::getActionOptionsHelp($action);
         }
-        /** @var $action GenerateAction */
+        /** @var GenerateAction $action */
         $attributes = $action->generator->attributes;
         unset($attributes['templates']);
         $hints = $action->generator->hints();

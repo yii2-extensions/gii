@@ -1,8 +1,8 @@
 <?php
 /**
- * @var \yii\web\View $this
- * @var \yii\widgets\ActiveForm $form
- * @var \yii\gii\generators\module\Generator $generator
+ * @var yii\gii\components\ActiveForm $form
+ * @var yii\gii\generators\module\Generator $generator
+ * @var yii\web\View $this
  */
 ?>
 <div class="module-form">

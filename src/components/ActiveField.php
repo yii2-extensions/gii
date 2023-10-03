@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace yii\gii\components;
 
+use yii\gii\generators\model\Generator;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
@@ -14,22 +15,28 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public $template = "{label}\n{input}\n{list}\n{error}";
     /**
-     * @inheritDoc
+     * @var Generator the model generator.
      */
     public $model;
 
     public function init(): void
     {
         parent::init();
+
         $stickyAttributes = $this->model->stickyAttributes();
+
         if (in_array($this->attribute, $stickyAttributes, true)) {
             $this->sticky();
         }
+
         $hints = $this->model->hints();
+
         if (isset($hints[$this->attribute])) {
             $this->hint($hints[$this->attribute]);
         }
+
         $autoCompleteData = $this->model->autoCompleteData();
+
         if (isset($autoCompleteData[$this->attribute])) {
             if (is_callable($autoCompleteData[$this->attribute])) {
                 $this->autoComplete($autoCompleteData[$this->attribute]());

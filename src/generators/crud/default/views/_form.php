@@ -21,12 +21,14 @@ if (empty($safeAttributes)) {
 echo "<?php\n";
 ?>
 
+use yii\gii\components\ActiveForm;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 
-/** @var yii\web\View $this */
-/** @var <?= ltrim($generator->modelClass, '\\') ?> $model */
-/** @var yii\widgets\ActiveForm $form */
+/**
+ * @var yii\web\View $this
+ * @var <?= ltrim($generator->modelClass, '\\') ?> $model
+ * @var yii\gii\components\ActiveForm $form
+ */
 ?>
 
 <div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-form">

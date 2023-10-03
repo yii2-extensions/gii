@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /**
- * @var yii\web\View $this
- * @var yii\widgets\ActiveForm $form
+ * @var yii\gii\components\ActiveForm $form
  * @var yii\gii\generators\crud\Generator $generator
+ * @var yii\web\View $this
  */
 
 echo $form->field($generator, 'modelClass');

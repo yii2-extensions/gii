@@ -3,15 +3,18 @@
 declare (strict_types = 1);
 
 use yii\helpers\Html;
+use yii\gii\controllers\DefaultController;
 
 /**
  * @var string $content
  * @var \yii\gii\Generator[] $generators
  * @var \yii\web\View $this
  */
-
-$generators = Yii::$app->controller->module->generators;
 $this->title = 'Welcome to Gii';
+
+/** @phpstan-var DefaultController $controller */
+$controller = Yii::$app->controller;
+$generators = $controller->module->generators;
 ?>
 <div class="default-index">
     <h1 class="border-bottom pb-3 mb-3">Welcome to Gii <small class="text-muted">a magical tool that can write code for you</small></h1>
