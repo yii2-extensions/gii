@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace yii\gii\components;
 
-
 class ActiveForm extends \yii\widgets\ActiveForm
 {
     /**
