@@ -35,6 +35,8 @@ abstract class Generator extends Model
     /**
      * @var array[] a list of available code templates. The array keys are the template names,
      * the array values are the corresponding template paths or path aliases.
+     *
+     * @phpstan-var array<string, string>
      */
     public $templates = [];
     /**

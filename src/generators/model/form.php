@@ -5,9 +5,11 @@ declare(strict_types=1);
 use yii\gii\generators\model\Generator;
 use yii\helpers\Url;
 
-/** @var yii\web\View $this */
-/** @var yii\widgets\ActiveForm $form */
-/** @var yii\gii\generators\model\Generator $generator */
+/**
+ * @var yii\gii\components\ActiveForm $form
+ * @var yii\gii\generators\model\Generator $generator
+ * @var yii\web\View $this
+ */
 
 echo $form->field($generator, 'db');
 echo $form->field($generator, 'useTablePrefix')->checkbox();
