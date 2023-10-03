@@ -4,14 +4,16 @@ declare(strict_types=1);
 
 namespace yiiunit\gii;
 
+use ReflectionException;
 use Yii;
 use yii\gii\Module;
 
 class ModuleTest extends TestCase
 {
-    public function testDefaultVersion()
+    public function testDefaultVersion(): void
     {
         $this->mockApplication();
+
         Yii::$app->extensions['yiisoft/yii2-gii'] = [
             'name' => 'yiisoft/yii2-gii',
             'version' => '2.0.6',
@@ -25,17 +27,17 @@ class ModuleTest extends TestCase
     /**
      * @dataProvider \yiiunit\gii\providers\Data::checkAccess
      *
-     * @param string $userIp
-     * @param bool $expectedResult
-     *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
-    public function testCheckAccess(array $allowedIPs, $userIp, $expectedResult)
+    public function testCheckAccess(array $allowedIPs, string $userIp, bool $expectedResult): void
     {
         $module = new Module('gii');
         $module->allowedIPs = $allowedIPs;
+
         $this->mockWebApplication();
+
         $_SERVER['REMOTE_ADDR'] = $userIp;
+
         $this->assertEquals($expectedResult, $this->invoke($module, 'checkAccess'));
     }
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace yiiunit\gii\generators;
 
 use Yii;
+use yii\base\Exception;
 use yii\gii\generators\controller\Generator as ControllerGenerator;
 use yii\helpers\FileHelper;
 use yiiunit\gii\GiiTestCase;
@@ -18,6 +19,8 @@ class ControllerGeneratorTest extends GiiTestCase
 {
     /**
      * @dataProvider \yiiunit\gii\providers\Data::controllerData
+     *
+     * @throws Exception
      */
     public function testSimpleWithNamespace($controllerClass, $expectedNames): void
     {
@@ -32,7 +35,7 @@ class ControllerGeneratorTest extends GiiTestCase
 
         $files = $generator->generate();
         $fileNames = array_map(
-            static fn($f) => basename((string) $f->path),
+            static fn($f) => basename($f->path),
             $files,
         );
 
