@@ -29,10 +29,9 @@ class GenerateAction extends \yii\base\Action
         if ($this->generator->validate()) {
             $this->generateCode();
             return null;
-        } else {
-            $this->displayValidationErrors();
-            return \yii\console\ExitCode::USAGE;
         }
+        $this->displayValidationErrors();
+        return \yii\console\ExitCode::USAGE;
     }
 
     protected function displayValidationErrors(): void
