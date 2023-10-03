@@ -79,9 +79,9 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      * @param string $method method name.
      * @param array $args method arguments
      *
-     * @return mixed method result
-     *
      * @throws ReflectionException
+     *
+     * @return mixed method result
      */
     protected function invoke(object $object, string $method, array $args = []): mixed
     {

@@ -93,13 +93,17 @@ class ModelGeneratorTest extends GiiTestCase
         foreach ($relations as $relation) {
             $found = str_contains($code, (string) $relation['relation']);
             $this->assertSame(
-                $relation['expected'], $found, "Relation \"{$relation['relation']}\" should"
+                $relation['expected'],
+                $found,
+                "Relation \"{$relation['relation']}\" should"
                 . ($relation['expected'] ? '' : ' not') . " be there:\n" . $code
             );
 
             $found = str_contains($code, (string) $relation['name']);
             $this->assertSame(
-                $relation['expected'], $found, "Relation Name \"{$relation['name']}\" should"
+                $relation['expected'],
+                $found,
+                "Relation Name \"{$relation['name']}\" should"
                 . ($relation['expected'] ? '' : ' not') . " be there:\n" . $code
             );
         }
@@ -232,7 +236,8 @@ class ModelGeneratorTest extends GiiTestCase
         foreach ($columns as $column) {
             $location = strpos($code, (string) $column['propertyRow']);
             $this->assertNotFalse(
-                $location, "Column \"{$column['columnName']}\" properties should be there:\n" . $column['propertyRow']
+                $location,
+                "Column \"{$column['columnName']}\" properties should be there:\n" . $column['propertyRow']
             );
         }
     }
