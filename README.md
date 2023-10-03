@@ -87,4 +87,4 @@ yii gii/model --tableName=city --modelClass=City
 
 ## License
 
-The BSD 3-Clause License. Please see [License File](LICENSE.md) for more information.
+The MIT License. Please see [License File](LICENSE.md) for more information.
