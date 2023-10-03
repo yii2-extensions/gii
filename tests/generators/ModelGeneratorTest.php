@@ -14,7 +14,7 @@ use yiiunit\gii\GiiTestCase;
  */
 class ModelGeneratorTest extends GiiTestCase
 {
-    public function testDefaultuseClassConstant()
+    public function testDefaultuseClassConstant(): void
     {
         $generator = new ModelGenerator();
         $this->assertEquals(
@@ -33,7 +33,7 @@ class ModelGeneratorTest extends GiiTestCase
         $this->assertTrue($generator->useClassConstant);
     }
 
-    public function testAll()
+    public function testAll(): void
     {
         $generator = new ModelGenerator();
         $generator->template = 'default';
@@ -43,7 +43,10 @@ class ModelGeneratorTest extends GiiTestCase
 
         $valid = $generator->validate();
         $this->assertFalse($valid);
-        $this->assertEquals($generator->getFirstError('queryNs'), 'Namespace must be associated with an existing directory.');
+        $this->assertEquals(
+            'Namespace must be associated with an existing directory.',
+            $generator->getFirstError('queryNs'),
+        );
 
         $generator->queryNs = 'app\models';
 
@@ -66,20 +69,15 @@ class ModelGeneratorTest extends GiiTestCase
             'Supplier.php',
             'UserRtl.php',
         ];
-        $fileNames = array_map(fn($f) => basename((string) $f->path), $files);
+        $fileNames = array_map(static fn ($f) => basename($f->path), $files);
         sort($fileNames);
         $this->assertEquals($expectedNames, $fileNames);
     }
 
     /**
      * @dataProvider \yiiunit\gii\providers\Data::modelRelations
-     *
-     * @param $tableName string
-     * @param $fileName string
-     * @param $useClassConstant bool
-     * @param $relations array
      */
-    public function testRelations($tableName, $fileName, $useClassConstant, $relations)
+    public function testRelations(string $tableName, string $fileName, bool $useClassConstant, array $relations): void
     {
         $generator = new ModelGenerator();
         $generator->template = 'default';
@@ -94,15 +92,17 @@ class ModelGeneratorTest extends GiiTestCase
         $code = $files[0]->content;
         foreach ($relations as $relation) {
             $found = str_contains($code, (string) $relation['relation']);
-            $this->assertTrue(
-                $relation['expected'] === $found,
+            $this->assertSame(
+                $relation['expected'],
+                $found,
                 "Relation \"{$relation['relation']}\" should"
                 . ($relation['expected'] ? '' : ' not') . " be there:\n" . $code
             );
 
             $found = str_contains($code, (string) $relation['name']);
-            $this->assertTrue(
-                $relation['expected'] === $found,
+            $this->assertSame(
+                $relation['expected'],
+                $found,
                 "Relation Name \"{$relation['name']}\" should"
                 . ($relation['expected'] ? '' : ' not') . " be there:\n" . $code
             );
@@ -111,13 +111,8 @@ class ModelGeneratorTest extends GiiTestCase
 
     /**
      * @dataProvider \yiiunit\gii\providers\Data::modelRules
-     *
-     * @param $tableName string
-     * @param $fileName string
-     * @param $useClassConstant bool
-     * @param $rules array
      */
-    public function testRules($tableName, $fileName, $useClassConstant, $rules)
+    public function testRules(string $tableName, string $fileName, bool $useClassConstant, array $rules): void
     {
         $generator = new ModelGenerator();
         $generator->template = 'default';
@@ -131,14 +126,11 @@ class ModelGeneratorTest extends GiiTestCase
         $code = $files[0]->content;
         foreach ($rules as $rule) {
             $location = strpos($code, (string) $rule);
-            $this->assertTrue(
-                $location !== false,
-                "Rule \"{$rule}\" should be there:\n" . $code
-            );
+            $this->assertNotFalse($location, "Rule \"$rule\" should be there:\n" . $code);
         }
     }
 
-    public function testGenerateStandardizedCapitalsForClassNames()
+    public function testGenerateStandardizedCapitalsForClassNames(): void
     {
         $modelGenerator = new ModelGeneratorMock();
         $modelGenerator->standardizeCapitals = true;
@@ -162,7 +154,7 @@ class ModelGeneratorTest extends GiiTestCase
         }
     }
 
-    public function testGenerateNotStandardizedCapitalsForClassNames()
+    public function testGenerateNotStandardizedCapitalsForClassNames(): void
     {
         $modelGenerator = new ModelGeneratorMock();
         $modelGenerator->standardizeCapitals = false;
@@ -188,7 +180,7 @@ class ModelGeneratorTest extends GiiTestCase
         }
     }
 
-    public function testGenerateSingularizedClassNames()
+    public function testGenerateSingularizedClassNames(): void
     {
         $modelGenerator = new ModelGeneratorMock();
         $modelGenerator->singularize = true;
@@ -209,7 +201,7 @@ class ModelGeneratorTest extends GiiTestCase
         }
     }
 
-    public function testGenerateNotSingularizedClassNames()
+    public function testGenerateNotSingularizedClassNames(): void
     {
         $modelGenerator = new ModelGeneratorMock();
 
@@ -243,8 +235,8 @@ class ModelGeneratorTest extends GiiTestCase
         $code = $files[0]->content;
         foreach ($columns as $column) {
             $location = strpos($code, (string) $column['propertyRow']);
-            $this->assertTrue(
-                $location !== false,
+            $this->assertNotFalse(
+                $location,
                 "Column \"{$column['columnName']}\" properties should be there:\n" . $column['propertyRow']
             );
         }

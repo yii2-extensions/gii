@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace yiiunit\gii;
 
 use Yii;
+use yii\db\Exception;
 use yii\helpers\FileHelper;
 
 /**
@@ -14,8 +15,11 @@ use yii\helpers\FileHelper;
  */
 class GiiTestCase extends TestCase
 {
-    protected $driverName = 'sqlite';
+    protected string $driverName = 'sqlite';
 
+    /**
+     * @throws Exception|yii\base\Exception
+     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -23,7 +27,6 @@ class GiiTestCase extends TestCase
         FileHelper::createDirectory(__DIR__ . '/runtime');
 
         $allConfigs = require(__DIR__ . '/data/config.php');
-
         $config = $allConfigs['databases'][$this->driverName];
         $pdo_database = 'pdo_' . $this->driverName;
 
@@ -45,6 +48,7 @@ class GiiTestCase extends TestCase
         if (isset($config['fixture'])) {
             Yii::$app->db->open();
             $lines = explode(';', file_get_contents($config['fixture']));
+
             foreach ($lines as $line) {
                 if (trim($line) !== '') {
                     Yii::$app->db->pdo->exec($line);

@@ -10,7 +10,7 @@ use yiiunit\gii\TestCase;
 
 class CrudGeneratorTest extends TestCase
 {
-    public function testGenerateColumnFormat()
+    public function testGenerateColumnFormat(): void
     {
         $g = new Generator();
 
@@ -42,7 +42,7 @@ class CrudGeneratorTest extends TestCase
         $this->assertEquals('url', $g->generateColumnFormat($c));
     }
 
-    public function testGeneratedControllerId()
+    public function testGeneratedControllerId(): void
     {
         $g = new Generator();
         $g->controllerClass = '\app\controllers\TestController';

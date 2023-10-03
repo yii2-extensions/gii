@@ -15,7 +15,7 @@ use Yii;
  */
 class SchemaTest extends GiiTestCase
 {
-    protected $driverName = 'pgsql';
+    protected string $driverName = 'pgsql';
 
     public function testPrefixesGenerator(): void
     {
@@ -26,7 +26,7 @@ class SchemaTest extends GiiTestCase
 
         $files = $generator->generate();
 
-        if (version_compare(str_replace('-dev', '', (string) Yii::getVersion()), '2.0.4', '<')) {
+        if (version_compare(str_replace('-dev', '', Yii::getVersion()), '2.0.4', '<')) {
             $this->markTestSkipped('This feature is only available since Yii 2.0.4.');
         }
 
@@ -91,13 +91,14 @@ class SchemaTest extends GiiTestCase
         $generator->generateJunctionRelationMode = $generateViaRelationMode;
 
         $files = $generator->generate();
+
         $this->assertCount($filesCount, $files);
 
         foreach ($relationSets as $index => $relations) {
             $modelCode = $files[$index]->content;
             $modelClass = basename($files[$index]->path, '.php');
 
-            if (version_compare(str_replace('-dev', '', (string) Yii::getVersion()), '2.0.4', '<')) {
+            if (version_compare(str_replace('-dev', '', Yii::getVersion()), '2.0.4', '<')) {
                 $this->markTestSkipped('This feature is only available since Yii 2.0.4.');
             }
 
@@ -105,6 +106,7 @@ class SchemaTest extends GiiTestCase
                 if (is_array($relation)) {
                     $relation = $relation[$generateViaRelationMode];
                 }
+
                 $this->assertStringContainsString(
                     (string) $relation,
                     $modelCode,

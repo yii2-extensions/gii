@@ -173,7 +173,7 @@ class CodeFile extends BaseObject
      *
      * @psalm-param false|list<string> $lines1
      */
-    private function renderDiff(array|false $lines1, string $lines2)
+    private function renderDiff(array|bool $lines1, string $lines2)
     {
         if (!is_array($lines1)) {
             $lines1 = explode("\n", (string) $lines1);
