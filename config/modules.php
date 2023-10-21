@@ -13,7 +13,7 @@ if (isset($params['yii.gii']) && $params['yii.gii'] === true) {
         'modules' => [
             'gii' => [
                 'class' => \yii\gii\Module::class,
-                'allowedIPs' => $params['yii.gii.allowedIPs'] ?? [],
+                'allowedIPs' => $params['yii.gii.allowedIPs'] ?? ['127.0.0.1', '::1'],
             ],
         ],
     ];
