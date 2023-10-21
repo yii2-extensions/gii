@@ -93,6 +93,19 @@ yii help gii/model
 yii gii/model --tableName=city --modelClass=City
 ```
 
+### Configure with yiisoft/config
+
+> Add the following code to your `config/config-plugin` file in your application.
+
+```php
+'config-plugin' => [
+    'web' => [
+        '$yii2-gii', // add this line
+        'web/*.php'
+    ],
+],
+```
+
 ## Testing
 
 [Check the documentation testing](/docs/testing.md) to learn about testing.

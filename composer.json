@@ -39,8 +39,7 @@
             "source-directory": "config"
         },
         "config-plugin": {
-            "web": "web/*.php",
-            "params": "params.php"
+            "yii2-gii": "modules.php"
         }
     },
     "config": {
@@ -52,7 +51,6 @@
     },
     "scripts": {
         "check-dependencies": "composer-require-checker",
-        "mutation": "roave-infection-static-analysis-plugin",
         "psalm": "psalm",
         "test": "phpunit"
     },
