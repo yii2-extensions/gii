@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * @var yii\gii\components\ActiveForm $form
  * @var yii\gii\generators\module\Generator $generator

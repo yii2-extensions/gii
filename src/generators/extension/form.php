@@ -1,10 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * @var yii\gii\components\ActiveForm $form
  * @var yii\gii\generators\extension\Generator $generator
  * @var yii\web\View $this
  */
-
 ?>
 <div class="alert alert-info">
     Please read the

@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+/**
+ * @link https://www.yiiframework.com/
+ *
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license https://www.yiiframework.com/license/
+ */
+
 namespace yii\gii\generators\controller;
 
 use Yii;
@@ -13,11 +20,14 @@ use yii\helpers\StringHelper;
 /**
  * This generator will generate a controller and one or a few action view files.
  *
- * @property array $actionIDs An array of action IDs entered by the user.
- * @property string $controllerFile The controller class file path.
- * @property string $controllerID The controller ID.
- * @property string $controllerNamespace The namespace of the controller class.
- * @property string $controllerSubPath The controller sub path.
+ * @property-read array $actionIDs An array of action IDs entered by the user.
+ * @property-read string $controllerFile The controller class file path.
+ * @property-read string $controllerID The controller ID.
+ * @property-read string $controllerNamespace The namespace of the controller class.
+ * @property-read string $controllerSubPath The controller sub path.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @since 2.0
  */
 class Generator extends \yii\gii\Generator
 {

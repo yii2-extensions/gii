@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+/**
+ * @link https://www.yiiframework.com/
+ *
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license https://www.yiiframework.com/license/
+ */
+
 namespace yii\gii;
 
 use Yii;
@@ -12,8 +19,11 @@ use yii\helpers\Html;
 /**
  * CodeFile represents a code file to be generated.
  *
- * @property string $relativePath The code file path relative to the application base path.
- * @property string $type The code file extension (e.g. php, txt).
+ * @property-read string $relativePath The code file path relative to the application base path.
+ * @property-read string $type The code file extension (e.g. php, txt).
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @since 2.0
  */
 class CodeFile extends BaseObject
 {
