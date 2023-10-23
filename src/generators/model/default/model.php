@@ -1,9 +1,10 @@
 <?php
-/**
- * This is the template for generating the model class of a specified table.
- */
+
+declare(strict_types=1);
 
 /**
+ * This is the template for generating the model class of a specified table.
+ *
  * @var array $properties list of properties (property => [type, name. comment])
  * @var array $relations list of relations (name => relation declaration)
  * @var array $relationsClassHints list of relations (name => relation class hint)

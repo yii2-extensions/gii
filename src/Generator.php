@@ -4,6 +4,13 @@ declare(strict_types=1);
 
 namespace yii\gii;
 
+/**
+ * @link https://www.yiiframework.com/
+ *
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license https://www.yiiframework.com/license/
+ */
+
 use Yii;
 use ReflectionClass;
 use yii\base\InvalidConfigException;
@@ -29,6 +36,10 @@ use yii\web\View;
  * @property string $description The detailed description of the generator.
  * @property string $stickyDataFile The file path that stores the sticky attribute values.
  * @property string $templatePath The root path of the template files that are currently being used.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ *
+ * @since 2.0
  */
 abstract class Generator extends Model
 {

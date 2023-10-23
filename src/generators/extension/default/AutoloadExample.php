@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * @var yii\gii\generators\extension\Generator $generator
  */

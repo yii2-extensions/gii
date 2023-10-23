@@ -2,8 +2,22 @@
 
 declare(strict_types=1);
 
+/**
+ * @link https://www.yiiframework.com/
+ *
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license https://www.yiiframework.com/license/
+ */
+
 namespace yii\gii\components;
 
+/**
+ * Renders diff to HTML. Output adjusted to be copy-paste friendly.
+ *
+ * @author Alexander Makarov <sam@rmcreative.ru>
+ *
+ * @since 2.0
+ */
 class DiffRendererHtmlInline extends \Diff_Renderer_Html_Array
 {
     /**

@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+/**
+ * @link https://www.yiiframework.com/
+ *
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license https://www.yiiframework.com/license/
+ */
+
 namespace yii\gii\generators\crud;
 
 use Yii;
@@ -21,6 +28,10 @@ use yii\web\Controller;
  * @property string[] $searchAttributes Searchable attributes.
  * @property false|\yii\db\TableSchema $tableSchema
  * @property string $viewPath The controller view path.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ *
+ * @since 2.0
  */
 class Generator extends \yii\gii\Generator
 {
