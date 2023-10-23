@@ -32,12 +32,13 @@ use yii\web\View;
  * - [[generate()]]: generates the code based on the current user input and the specified code template files.
  *   This is the place where main code generation code resides.
  *
- * @property-read string $name The name of the generator.
- * @property-read string $description The detailed description of the generator.
- * @property-read string $stickyDataFile The file path that stores the sticky attribute values.
- * @property-read string $templatePath The root path of the template files that are currently being used.
+ * @property string $name The name of the generator.
+ * @property string $description The detailed description of the generator.
+ * @property string $stickyDataFile The file path that stores the sticky attribute values.
+ * @property string $templatePath The root path of the template files that are currently being used.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ *
  * @since 2.0
  */
 abstract class Generator extends Model

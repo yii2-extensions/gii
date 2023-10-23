@@ -29,6 +29,7 @@ use yii\gii\Generator;
  *
  * @author Tobias Munk <schmunk@usrbin.de>
  * @author Qiang Xue <qiang.xue@gmail.com>
+ *
  * @since 2.0
  */
 class GenerateController extends Controller

@@ -19,10 +19,11 @@ use yii\helpers\Html;
 /**
  * CodeFile represents a code file to be generated.
  *
- * @property-read string $relativePath The code file path relative to the application base path.
- * @property-read string $type The code file extension (e.g. php, txt).
+ * @property string $relativePath The code file path relative to the application base path.
+ * @property string $type The code file extension (e.g. php, txt).
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ *
  * @since 2.0
  */
 class CodeFile extends BaseObject

@@ -13,6 +13,7 @@ namespace yii\gii\components;
 
 /**
  * @author Wilmer Arambula <terabytesoftw@gmail.com>
+ *
  * @since 2.2
  */
 class ActiveForm extends \yii\widgets\ActiveForm

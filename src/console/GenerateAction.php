@@ -15,6 +15,7 @@ use yii\helpers\Console;
 
 /**
  * @author Qiang Xue <qiang.xue@gmail.com>
+ *
  * @since 2.0
  */
 class GenerateAction extends \yii\base\Action

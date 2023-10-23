@@ -22,14 +22,15 @@ use yii\web\Controller;
 /**
  * Generates CRUD controller and views.
  *
- * @property-read string[] $columnNames Model column/attribute names.
- * @property-read string $controllerID The controller ID (without the module ID prefix).
- * @property-read string $nameAttribute
- * @property-read string[] $searchAttributes Searchable attributes.
- * @property-read \yii\db\TableSchema|false $tableSchema
- * @property-read string $viewPath The controller view path.
+ * @property string[] $columnNames Model column/attribute names.
+ * @property string $controllerID The controller ID (without the module ID prefix).
+ * @property string $nameAttribute
+ * @property string[] $searchAttributes Searchable attributes.
+ * @property false|\yii\db\TableSchema $tableSchema
+ * @property string $viewPath The controller view path.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
+ *
  * @since 2.0
  */
 class Generator extends \yii\gii\Generator
