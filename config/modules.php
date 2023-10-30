@@ -7,13 +7,13 @@ declare(strict_types=1);
  */
 $gii = [];
 
-if (isset($params['yii.gii']) && $params['yii.gii'] === true) {
+if (isset($params['yii2.gii']) && $params['yii2.gii'] === true) {
     $gii = [
         // configuration adjustments for 'dev' environment
         'modules' => [
             'gii' => [
-                'class' => \yii\gii\Module::class,
-                'allowedIPs' => $params['yii.gii.allowedIPs'] ?? ['127.0.0.1', '::1'],
+                'class' => $params['yii2.gii.classMap'] ?? \yii\gii\Module::class,
+                'allowedIPs' => $params['yii2.gii.allowedIPs'] ?? ['127.0.0.1', '::1'],
             ],
         ],
     ];
