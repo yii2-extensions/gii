@@ -106,6 +106,34 @@ yii gii/model --tableName=city --modelClass=City
 ],
 ```
 
+> For activate the gii generator, add in your config/params.php file in your application.
+
+```php
+return [
+    'yii2.gii' => true,
+];
+```	
+
+> For change allowed IPs, add in your config/params.php file in your application.
+
+```php
+return [
+    'yii2.gii.allowedIPs' => ['192.168.1.1'],
+];
+```
+
+> For class map module, add in your config/params.php file in your application.
+
+```php
+use App\YourClass;
+
+return [
+    'yii2.gii.classMap' => [
+        'class' => YourClass::class,
+    ],
+];
+```
+
 ## Testing
 
 [Check the documentation testing](/docs/testing.md) to learn about testing.
