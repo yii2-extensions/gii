@@ -10,6 +10,7 @@ $gii = [];
 if (isset($params['yii2.gii']) && $params['yii2.gii'] === true) {
     $gii = [
         // configuration adjustments for 'dev' environment
+        'bootstrap' => ['gii'],
         'modules' => [
             'gii' => [
                 'class' => $params['yii2.gii.classMap'] ?? \yii\gii\Module::class,
