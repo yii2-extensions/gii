@@ -39,7 +39,7 @@
             "source-directory": "config"
         },
         "config-plugin": {
-            "yii2-gii": "modules.php"
+            "yii2-gii": "extension.php"
         }
     },
     "config": {
