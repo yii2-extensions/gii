@@ -15,18 +15,12 @@
     <a href="https://github.com/yii2-extensions/gii/actions/workflows/build.yml" target="_blank">
         <img src="https://github.com/yii2-extensions/gii/actions/workflows/build.yml/badge.svg" alt="PHPUnit">
     </a>
+    <a href="https://github.com/yii2-extensions/gii/actions/workflows/compatibility.yml" target="_blank">
+        <img src="https://github.com/yii2-extensions/gii/actions/workflows/compatibility.yml/badge.svg" alt="Compatibility">
+    </a>      
     <a href="https://codecov.io/gh/yii2-extensions/gii" target="_blank">
         <img src="https://codecov.io/gh/yii2-extensions/gii/branch/main/graph/badge.svg?token=MF0XUGVLYC" alt="Codecov">
-    </a>
-    <a href="https://github.com/yii2-extensions/gii/actions/workflows/static.yml" target="_blank">
-        <img src="https://github.com/yii2-extensions/gii/actions/workflows/static.yml/badge.svg" alt="PHPStan">
-    </a>
-    <a href="https://github.com/yii2-extensions/gii/actions/workflows/static.yml" target="_blank">
-        <img src="https://img.shields.io/badge/PHPStan%20level-2-blue" alt="PHPStan level">
-    </a>    
-    <a href="https://github.styleci.io/repos/698630757?branch=main" target="_blank">
-        <img src="https://github.styleci.io/repos/698630757/shield?branch=main" alt="Code style">
-    </a>        
+    </a>   
 </p>
 
 ## Installation
@@ -137,6 +131,12 @@ return [
 ## Testing
 
 [Check the documentation testing](/docs/testing.md) to learn about testing.
+
+## Quality code
+
+[![static-analysis](https://github.com/yii2-extensions/gii/actions/workflows/static.yml/badge.svg)](https://github.com/yii2-extensions/gii/actions/workflows/static.yml)
+[![phpstan-level](https://img.shields.io/badge/PHPStan%20level-2-blue)](https://github.com/yii2-extensions/gii/actions/workflows/static.yml)
+[![StyleCI](https://github.styleci.io/repos/698630757/shield?branch=main)](https://github.styleci.io/repos/698630757?branch=main)
 
 ## Our social networks
 
