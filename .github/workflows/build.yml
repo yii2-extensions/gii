@@ -23,7 +23,7 @@ name: build
 
 jobs:
   phpunit:
-    name: PHP ${{ matrix.php }} on ${{ matrix.os }}
+    name: PHP ${{ matrix.php }}-${{ matrix.os }}-${{ matrix.branch }}
     runs-on: ${{ matrix.os }}
     services:
       postgres:
