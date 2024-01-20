@@ -23,7 +23,7 @@ name: build
 
 jobs:
   phpunit:
-    name: PHP ${{ matrix.php }} on ${{ matrix.os }}
+    name: PHP ${{ matrix.php }}-${{ matrix.os }}-${{ matrix.branch }}
     runs-on: ${{ matrix.os }}
     services:
       postgres:
@@ -38,7 +38,7 @@ jobs:
 
     strategy:
       matrix:
-        branch: ['2.0.49', '^2.2.x-dev']
+        branch: ['^2.0.49', '^2.2.x-dev']
         os: [ubuntu-latest]
         php: ['8.1', '8.2', '8.3']
 
