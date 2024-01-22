@@ -2,7 +2,6 @@
 
 declare (strict_types = 1);
 
-use Yii;
 use yii\gii\controllers\DefaultController;
 use yii\gii\Generator;
 use yii\helpers\Html;
