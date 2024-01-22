@@ -1,6 +1,5 @@
 <?php
 
-use Yii;
 use yii\gii\GiiAsset;
 use yii\helpers\Html;
 use yii\web\View;
